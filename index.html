@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <!-- abaixo, a importação da font direto do fonts.google.com -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <meta charset="UTF-8" />
+    <!-- aceita caracteres especiais -->
+    <meta http-equiv=""X-UA-Compatible" content=""IE=edge">
+    <!-- torna compatível com navegadores mais antigod -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- adaptabilidade com tamanho da tela, diferente de responsibilidade -->
+    <title>DISCOVER</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div id="container">
+      <div id="profile">
+        <img src="./assets/assets/avatar.png" alt="Foto de perfil." />
+        <p>@maykbrito</p>
+      </div>
+      <div id="switch" onclick="toggleMode()">
+        <button></button>
+        <span></span>
+      </div>
+      <ul>
+        <li>
+          <a href="#" target="_blank">Currículo</a>
+        </li>
+        <li>
+          <a href="#" target="_blank">Github</a>
+        </li>
+        <li>
+          <a href="#" target="_blank">LinkedIn</a>
+        </li>
+        <li>
+          <a href="#" target="_blank">YouTube</a>
+        </li>
+      </ul>
+      <div id="icons">
+        <a href="https://github.com/rgmaccari" target="_blank">
+          <ion-icon name="briefcase-outline"></ion-icon>
+        </a>
+        <a href="https://github.com/rgmaccari" target="_blank">
+          <ion-icon name="logo-github"></ion-icon>
+        </a>
+        <a href="https://github.com/rgmaccari" target="_blank">
+          <ion-icon name="logo-linkedin"></ion-icon>
+        </a>
+        <a href="https://github.com/rgmaccari" target="_blank">
+          <ion-icon name="logo-youtube"></ion-icon>
+        </a>
+      </div>
+      <footer>
+        Feito por
+        <a href="https://github.com/rgmaccari" target="_blank"
+          >Rafael Maccari</a
+        >
+      </footer>
+    </div>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <script src="./script.js"></script>
+  </body>
+</html>

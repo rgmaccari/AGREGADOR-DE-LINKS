@@ -1,0 +1,192 @@
+/* remover os padrões do navegador */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* as medidas vão acompanhar a caixa em que o elemento está incluso */
+}
+
+/* aqui, voce define um padrao de comportamento atribuindo nomes as caracteristicas que voce quer
+abaixo ":root" (raiz), damos o nome de "bg-url" e atribuimos a esse nome, a foto do background
+quando quisermos ela, nao vamos escrever
+background-image: src(./assets/...), mas sim
+background: var(--bg-url) */
+
+:root {
+  /* variavel que adiciona a cor branca (-- = inicia a variavel / text-color é um nome qualquer / white é a cor) onde quer que coloquemos "var (--text-color), vai ficar dessa cor */
+  --text-color: white;
+  --bg-url: url(./assets/assets/bg-mobile.jpg);
+  --stroke-color: rgba(
+    255,
+    255,
+    255,
+    0.5
+  ); /* red, green, blue, alpha, indo do zero até 255, sendo alpha a transparencia (max. 1) */
+  --surface-color: rgba(255, 255, 255, 0.05);
+  --surface-color-hover: rgba(0, 0, 0, 0.02);
+  --highlight-color: rgba(255, 255, 255, 0.2);
+  --switch-bg-url: url(./assets/assets/moon-stars.svg);
+}
+
+.light {
+  --text-color: black;
+  --bg-url: url(./assets/assets/bg-mobile-light.jpg);
+  --stroke-color: rgba(0, 0, 0, 0.5);
+  --surface-color: rgba(0, 0, 0, 0.05);
+  --surface-color-hover: rgba(0, 0, 0, 0.02);
+  --highlight-color: rgba(0, 0, 0, 0.1);
+  --switch-bg-url: url(./assets/assets/sun.svg);
+}
+
+body {
+  /* adiciona estilo somente ao body */
+  background: var(--bg-url); /* imagem de fundo */
+  background-repeat: no-repeat; /* naturalmente a imagem se repete, "no repeat" tira isso */
+  background-position: top center; /* ela estava no canto, com isso, o topo da imagem vai para o centro, se eu deixasse só center, o meio (eixo y) da imagem iria para o centro, com o "top", o topo é que vai */
+  background-size: cover; /* cobre todo o espaço visível */
+}
+
+body * {
+  /* o * adiciona o estilo aos elementos dentro do body */
+  font-family: "Inter", sans-serif;
+  color: var(--text-color);
+}
+
+#container {
+  width: 360px;
+  /*a margem vai funcionar como um relogio no sentido horario, sendo o primeiro o topo, segundo direita, terceiro baixo e quarto esquerda */
+  margin: 56px auto 0px;
+  padding: 0 24px; /* quando colocar só dois valores: o primeiro corresponde ao eixo y e o segundo ao eixo x */
+}
+
+/* existem dois displays importantes: 
+
+1 -- block (o elemento vai utilizar toda a largura possível da tela, se voce definir uma "width" ele vai ocupar todo o espaço dentro da width, forçando qualquer outro elemento a ser colocado na linha de baixo);
+
+2 -- inline (o elemento vai comportar outros elementos ao seu lado, sem quebrar a linha);
+
+alguns elementos possuem por padrão o display block e outros o inline, por isso é importante avaliar a necessidade em cada caso
+a div, é naturalmente "block", entao conseguimos colocar uma div no centro da tela utilizando o "margin:auto"
+as img, são naturalmente "inline", entao nao conseguimos utilizar "margin: auto", pois por natureza, o codigo vai entender que o que for colocado a mais no elemento, vai aparecer ao lado dele, dificultando a centralização
+desta forma, para facilitar colocar uma img ao centro, atribuimos o "display: block" e em seguida o "margin: auto"
+
+outra forma de alinhar ao centro, é pegando o elemento-pai e colocando a propriedade "text-align: center", assim, todos os elementos filhos que forem "inline" entrarão ao centro
+
+neste caso, ja estamos definindo no elemento-pai, que o alinhamento vai ser ao centro*/
+
+#profile {
+  text-align: center;
+  padding: 24px;
+}
+
+#profile img {
+  /* dentro do elemento com "id=profile", ele vai alterar somente o que for "img" */
+  width: 112px;
+}
+
+#profile p {
+  font-weight: 500; /* bold */
+  line-height: 24px; /* altura da linha */
+  margin-top: 8px;
+}
+
+#switch{
+  position: relative;/* relativiza o position absolute do button, isso porque, ele ficaria solto ao longo da pagina toda, agora, ele é absoluto mas dentro da switch apenas */
+  width: 64px;
+  margin: 4px auto;
+}
+
+#switch button {
+  width: 32px;
+  height: 32px;
+  background: white;
+  border: none;
+  border-radius: 50%;
+  background-image: var(--switch-bg-url);
+  background-repeat: no-repeat;
+  background-position: center;
+  /* as adições abaixo só sao possiveis graças ao "position: absolute" */
+  position: absolute;/* faz uma sobreposição de camadas */
+  z-index: 1;/* "sobe uma camada", ficando sobreposto a um outro elemento */
+  left: 0;
+  /* posicionar exatamente ao meio */
+  transform: translateY(-50%);
+  top: 50%;
+}
+
+.light #switch button{
+  right: 0;
+  left: initial;
+}
+
+#switch span {
+  width: 64px;
+  height: 24px;
+  display: block; /* o span tem display in line */
+  background: var(--surface-color);
+  border: 1px solid var(--stroke-color);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 9999px;/* borda em formato de elipse */
+}
+
+ul {
+  list-style: none;
+  /* os 3 itens seguintes mostram como separar os elementos */
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px 0;
+}
+
+ul li a {
+  display: flex;
+  /* os itens abaixo, ignoram o <li> e foca somente no <a>, lembrando que cada um deles tem propriedades diferentes, no caso o display padrao do a é inline, isso significa que tudo ficaria um ao lado do outro, já uma li, tem display block */
+  align-items: center;
+  justify-content: center;
+  padding: 16px 24px;
+  background: var(--surface-color);
+  border: 1px solid var(--stroke-color);
+  border-radius: 8px;
+  backdrop-filter: blur(4px); /* efeito de embaçado */
+  -webkit-backdrop-filter: blur(
+    4px
+  ); /* mesmo efeito mas com webkit para funcionar em outros navegadores */
+  text-decoration: none; /* tira o sublinhado */
+  font-weight: 500; /* bold */
+  transition: background 0.2s; /* transição da mudança do link ao passar o mouse em cima */
+}
+
+/* pseudo-selector */
+ul li a:hover {
+  /* hover = quando passar o mouse em cima */
+  background: var(--surface-color-hover);
+  border: 1.5px solid var(--text-color);
+}
+
+#icons {
+  /* aqui, falamos da div com id icons */
+  display: flex;
+  justify-content: center;
+  padding: 24px 0;
+  font-size: 24px;
+}
+
+#icons a {
+  /* aqui, falamos do link dentro da div com id icons */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  border-radius: 50%;
+  transition: background 0.2s;
+}
+
+#icons a:hover {
+  background: var(--highlight-color);
+}
+
+footer {
+  padding: 24px 0;
+  text-align: center;
+  font-size: 14px;
+}
