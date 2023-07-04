@@ -52,7 +52,8 @@ body * {
 }
 
 #container {
-  width: 360px;
+  width: 100%;
+  max-width: 588px;
   /*a margem vai funcionar como um relogio no sentido horario, sendo o primeiro o topo, segundo direita, terceiro baixo e quarto esquerda */
   margin: 56px auto 0px;
   padding: 0 24px; /* quando colocar só dois valores: o primeiro corresponde ao eixo y e o segundo ao eixo x */
