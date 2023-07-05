@@ -120,6 +120,9 @@ neste caso, ja estamos definindo no elemento-pai, que o alinhamento vai ser ao c
   animation: slide-in 0.3s forwards; /* antes, havia uma posição especifica, agora segue conforme a animação 
   "forward" faz com que o botao para na ultima posição que parou*/
 }
+#switch button:hover{
+  outline: 8px solid var(--highlight-color);
+}
 
 #switch span {
   width: 64px;
