@@ -113,11 +113,12 @@ neste caso, ja estamos definindo no elemento-pai, que o alinhamento vai ser ao c
   /* posicionar exatamente ao meio */
   transform: translateY(-50%);
   top: 50%;
+  animation: slide-back 0.3s;/* antes, havia uma posição especifica, agora segue conforme a animação */
 }
 
 .light #switch button{
-  right: 0;
-  left: initial;
+  animation: slide-in 0.3s forwards; /* antes, havia uma posição especifica, agora segue conforme a animação 
+  "forward" faz com que o botao para na ultima posição que parou*/
 }
 
 #switch span {
@@ -196,12 +197,34 @@ footer {
 /* media queries */
 @media (min-width: 700px){/* determina uma condição que se for verdadeira, fará os ajustes abaixo */
   /* só funciona se tiver a configuração de viewport */
-  :root{
+  :root{/* no arquivo root, o bg-url sera outro
+    no modo light, mesma coisa */
     --bg-url: url(./assets/assets/bg-desktop.jpg);
   }
 
   .light{
     --bg-url: url(./assets/assets/bg-desktop-light.jpg);
   }
+/* neste caso foi só copiar e colar os ajustes, nada mudou lá em cima */
+}
 
+/* animation */
+/* keyframe vai movimentar algo
+entao voce precisa determinar de onde vem e para onde vai
+como sabemos que queremos alterar o botao do light mode, a animação vai consistir em levar ele da esquerda para a direita e da direita para a esquerda quando apertado com o mouse */
+@keyframes slide-in{
+  from{
+    left: 0;
+  }
+  to{
+    left: 50%;
+  }
+}
+
+@keyframes slide-back{
+  from{
+    left: 50%;
+  }to{
+    slide: 0;
+  }
 }
