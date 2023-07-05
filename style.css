@@ -43,6 +43,7 @@ body {
   background-repeat: no-repeat; /* naturalmente a imagem se repete, "no repeat" tira isso */
   background-position: top center; /* ela estava no canto, com isso, o topo da imagem vai para o centro, se eu deixasse só center, o meio (eixo y) da imagem iria para o centro, com o "top", o topo é que vai */
   background-size: cover; /* cobre todo o espaço visível */
+  height: 100vh;/* viewport height */
 }
 
 body * {
