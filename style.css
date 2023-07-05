@@ -191,3 +191,16 @@ footer {
   text-align: center;
   font-size: 14px;
 }
+
+/* media queries */
+@media (min-width: 700px){/* determina uma condição que se for verdadeira, fará os ajustes abaixo */
+  /* só funciona se tiver a configuração de viewport */
+  :root{
+    --bg-url: url(./assets/assets/bg-desktop.jpg);
+  }
+
+  .light{
+    --bg-url: url(./assets/assets/bg-desktop-light.jpg);
+  }
+
+}
