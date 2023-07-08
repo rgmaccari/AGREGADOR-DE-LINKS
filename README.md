@@ -3,7 +3,7 @@
 <p align=center>Realizado por Rafael Gustavo Maccari utilizando os conhecimentos adquiridos durante a "Trilha Explorer" da Rocketseat.</p>
 
 <p align=center>
-<img alt="Preview do projeto" src=".github/Preview.png">
+<img alt="Preview do projeto" src=".github/Preview Final.png">
 </p>
 
 ## 🛠️ Tecnologias utilizadas:
