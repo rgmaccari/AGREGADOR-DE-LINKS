@@ -13,7 +13,7 @@ Esse projeto foi desenvolvido com as seguintes ferramentas:
 - Git e Github.
 
 ## ⌨️ Utilização:
-Indique um estilo clicando em uma das opções e seja redirecionado para uma pasta no Pinterest contendo as melhores ideias.
+Clique em uma das opções para ser direcionado à um perfil social.
 
 ## 🧍‍♂️Feito por:
 Rafael Gustavo Maccari em junho de 2023.
